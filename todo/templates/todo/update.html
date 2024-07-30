@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Modificar Tarea: {{ todo['description'] }}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post" class="formbase">
+    <div>
+        <label for="description">Descripción</label>
+        <input name="description" id="description" value="{{ request.form['description'] or todo['description'] }}" required />
+    </div>
+    <div>
+        <label for="completed">Completada</label>
+        <input type="checkbox" name="completed" id="completed" {% if request.form.get('completed') or todo['completed'] %} checked {% endif %} />
+    </div>
+    <div>
+        <input class="but" type="submit" value="Guardar">
+    </div>
+</form>
+
+<!-- Formulario para eliminar la tarea -->
+<form action="{{ url_for('todo.delete', id=todo['id']) }}" method="post">
+    <input type="submit" class="bute" value="Eliminar" onclick="return confirm('¿Estás seguro de querer eliminar esta tarea?');">
+</form>
+{% endblock %}

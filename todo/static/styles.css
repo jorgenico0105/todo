@@ -1,0 +1,108 @@
+:root {
+    --fontmain: "Oswald", sans-serif;
+    --primario: rgba(0, 0, 255, 0.3);
+    --secundario: rgba(0, 0, 255, 0.4);
+}
+
+body {
+    font-family: var(--fontmain);
+    background-color: beige;
+}
+
+.navbar {
+    background-color: var(--primario);
+    border-radius: 5px;
+}
+.contentvar{
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 15px;
+	margin: 15px;
+}
+ul{
+	display: flex;
+	gap: 25px;
+	list-style-type: none;
+	line-height: 2;
+	font-size: 25px;
+}
+a{
+	text-decoration: none;
+	color: beige;
+}	
+a:hover{
+	color: var(--secundario);
+}
+h1{
+	font-size: 35px;
+}
+.head{
+	margin: 15px;
+}
+.content{
+	display: flex;
+	flex-direction: column;
+}
+.formbase{
+	display: flex;
+	flex-direction: column;
+	font-size: 25px;
+	line-height: 2;
+	margin: 20px;
+}
+.but{
+	border: none;
+	height: 50px;
+	background-color: var(--primario);
+	color: beige;
+	font-family: var(--fontmain);
+	width: 110px;
+	font-size: 20px;
+	border-radius: 5px;
+	margin-top: 15px;
+	margin-left: 40px;
+	cursor: pointer;
+	transition: background-color 0.5s;
+}
+.but:hover{
+	background-color: var(--secundario);
+}
+.bute{
+	border: none;
+	height: 50px;
+	background-color: var(--primario);
+	color: beige;
+	font-family: var(--fontmain);
+	width: 110px;
+	font-size: 20px;
+	border-radius: 5px;
+	margin-top: 15px;
+	margin-left: 60px;
+	cursor: pointer;
+	transition: background-color 0.5s;
+}
+.bute:hover{
+	background-color: var(--secundario);
+}
+.action{
+	color: var(--primario);
+	font-size: 25px;
+	font-weight: bold;
+	margin-left: 20px;
+}
+.edit{
+	color: var(--primario);
+	font-size: 25px;
+	font-weight: bold;
+	margin-left: 20px;
+}
+.conteinar{
+	display: flex;
+	flex-direction: column;
+	background-color: var(--primario);
+	border-radius: 10px;
+	padding-left: 10px;
+}
+ul.conteinar li {
+	border-bottom: solid 3px;
+}

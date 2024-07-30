@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %} - Todo List</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="contentvar">
+                <h1>Todo List</h1>
+                <ul>
+                        {% if g.user %}
+                            <li><span>{{ g.user['username'] }}</span></li>
+                            <li><a href="{{ url_for('auth.logout') }}">Cerrar sesión</a></li>
+                        {% else %}
+                            <li><a href="{{ url_for('auth.login') }}">Iniciar sesión</a></li>
+                            <li><a href="{{ url_for('auth.register') }}">Registrar</a></li>
+                        {% endif %}
+                </ul>
+            </div>
+        </nav>
+        <section class="content">
+            <header>
+                {% block header %}{% endblock %}
+            </header>
+            {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+            {% endfor %}
+            {% block content %}{% endblock %}
+        </section>
+    </body>
+</html>
